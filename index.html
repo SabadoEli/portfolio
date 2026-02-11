@@ -1,60 +1,38 @@
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="JavaScript Calculator">
-    <meta name="keywords" content="JavaScript, HTML, CSS">
-    <meta name="author" content="Bruce Bauer">
-    <title>JavaScript Calculator</title>
-    <link rel="stylesheet" type="text/css" href="assets/style/minmaxavg.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eli Sabado | Software Developer</title>
+  <meta name="description" content="Portfolio of Your Name - Software Developer specializing in full-stack development." />
+  <link rel="stylesheet" href="assets/style/styles.css" />
 </head>
+
 <body>
-<form id="myform">
-    <div class="formcontainer" onsubmit="return false">
-        <h1>Minimum, Maximum, and Average</h1>
-        <fieldset id="detail">
-            <legend>Min Max Avg</legend>  
-            <br>
-            
-            <label class="formlabel" for="Operand1">Operand 1: </label>
-            <input type="text" id="Operand1" name="Operand1" size="15" maxlength="15">
-            <label class="error" for="Operand1" id="Operand1Error"></label>
-            <br><br>
-      
-            <label class="formlabel" for="Operand2">Operand 2: </label>
-            <input type="text" id="Operand2" name="Operand2" size="15" maxlength="15">
-            <label class="error" for="Operand2" id="Operand2Error"></label>
-            <br><br>
 
-            <label class="formlabel" for="Operand3">Operand 3: </label>
-            <input type="text" id="Operand3" name="Operand3" size="15" maxlength="15">
-            <label class="error" for="Operand3" id="Operand3Error"></label>
-            <br><br>
+  <!-- ================= NAVIGATION ================= -->
+  <header>
+    <nav class="nav">
+      <div class="logo">Eli Sabado</div>
+      <ul class="nav-links">
+      </ul>
+    </nav>
+  </header>
 
-            <label class="formlabel">Operator: </label>
-                <label for="MinOperator">
-                    <input type="radio" name="Operator" id="MinOperator" value="Min">Min
-                </label>
-                <label for="MaxOperator">
-                    <input type="radio" name="Operator" id="MaxOperator" value="Max">Max
-                </label>
-                <label for="AvgOperator">
-                    <input type="radio" name="Operator" id="AvgOperator" value="Avg">Avg
-                </label>
-            <label for="Operator" class="error" id="OperatorError"></label>
-            <br><br>
 
-            <label class="formlabel">Result: </label>
-            <span id="Result"></span>
-            <br><br>
+  <div class="main-content">
 
-            <input type="button" value="Calculate" name="Calculate" onclick="calculate();">
-            <input type="button" value="Clear" name="Clear" onclick="clearform();">
+    <img src="assets/img/portrait.JPG" alt="Portrait of Eli" class="profile-img">
 
-        </fieldset>
+    <div class="about-section">
+
+        <h2>About Me</h2>
+
+        <p>Currently work as a Application Developer Intern at the Arkansas Department of Transportation. Also currently aspiring to be a
+            Tech-Lead / Project Manager. I have experience working in Full-Stack Development from the Client Side to the Backend Side, Application Level
+            Database Schema design, using tools and frameworks such as React, ASP.NET, Swagger, Postman, SSMS, Firebase, C#, JavaScript, SQL, HTML, CSS.
+        </p>
+
     </div>
-</form>
-<script src="assets/scripts/minmaxavg.js"></script>
-</body>
-</html>
+
+  </div>
