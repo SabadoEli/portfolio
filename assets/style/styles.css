@@ -3,6 +3,34 @@ html, body {
   padding: 0;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  background: linear-gradient(
+    90deg,
+    rgba(10, 25, 47, 0.85),
+    rgba(18, 60, 99, 0.85),
+    rgba(0, 184, 148, 0.85)
+  );
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(0, 212, 165, 0.25);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 2rem;   /* increase size */
+  font-weight: 600;  /* optional: make it stronger */
+}
+
+
 body {
   min-height: 100vh;
   background: linear-gradient(
@@ -17,16 +45,19 @@ body {
 
 .main-content{
     display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
 .profile-img {
-height: 450px;
+    height: 450px;
     width: auto;
+    margin-left: 2rem;
 }
 
 .about-section {
-    padding-top: 7rem;
-    padding-right: 2rem;
+    padding: 2rem 7rem;
+    margin-right: 2rem;
 
     background: rgba(255, 255, 255, 0.01); /* subtle transparency */
     backdrop-filter: blur(12px);
