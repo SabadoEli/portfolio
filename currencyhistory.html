@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/style/styles.css" />
+</head>
+
+<body>
+<h1>Currency Value History</h1>
+
+<select id="baseCurrency">
+    <option value="EUR">EUR</option>
+    <option value="USD">USD</option>
+    <option value="JPY">JPY</option>
+    <option value="GBP">GBP</option>
+    <option value="CAD">CAD</option>
+
+</select>
+
+<select id="targetCurrency">
+    <option value="EUR">EUR</option>
+    <option value="USD">USD</option>
+    <option value="JPY">JPY</option>
+    <option value="GBP">GBP</option>
+    <option value="CAD">CAD</option>
+</select>
+
+
+<input type="date" id="fromDate">
+<input type="date" id="toDate">
+
+<button onclick="getForexData()">Get Data</button>
+
+<canvas id="chartjs-0" width="600" height="400"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/scripts/currencyhistory.js"></script>
+
+</body>
