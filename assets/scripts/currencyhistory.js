@@ -20,9 +20,7 @@ async function getForexData() {
 
         const data = await response.json();
 
-        console.log(data); // see what comes back
-
-        processData(data); // this is your function that builds dates & values
+        processData(data); 
 
     } catch (error) {
         console.error("Error:", error);

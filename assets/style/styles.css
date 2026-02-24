@@ -30,6 +30,9 @@ nav {
   font-weight: 600;  /* optional: make it stronger */
 }
 
+.nav-links {
+  gap: 2rem;
+}
 
 body {
   min-height: 100vh;
