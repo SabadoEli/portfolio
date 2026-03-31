@@ -120,6 +120,13 @@ body {
 
 .profile-text{
   text-align: center;
+  display: flex;
+}
+
+.linkedin-img{
+    height: 50px;
+    width: auto;
+    margin-top: 0.4rem;
 }
 
 .linkedin-link{
