@@ -343,3 +343,55 @@ body {
 
     color: #e6f1ff;
 }
+
+.dbproj-example{
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+.dbexamples-title{
+        display: flex;
+    align-items: center;
+    justify-content: center; /* centers the group */
+    gap: 10px;
+}
+
+.db-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.db-logo{
+    width: 50px;
+    height: auto;
+}
+
+.dbproj-text-title {
+    display: flex;
+    align-items: center;      /* vertical alignment */
+    justify-content: center;  /* centers the group horizontally */
+    gap: 10px;                /* space between logo and text */
+    text-align: center;
+}
+
+.firebase-dash{
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid #F57F17;
+    margin-left: 2rem;
+}
+
+.firebase-logo{
+    width: auto;
+    height: 30px;
+}
+
+.er-diagram-example{
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid #38c3ff;
+    margin-left: 2rem;
+}
