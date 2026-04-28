@@ -4,7 +4,7 @@ let chart;
 let dailyMaxUV = {};
 let currentLocation = "Berlin";
 
-fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=uv_index&past_days=5&forecast_days=5")
+fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=uv_index&past_days=5&forecast_days=6")
   .then(res => res.json())
   .then(data => {
     const times = data.hourly.time;
@@ -12,12 +12,20 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hou
     currentLocation = "Berlin";
 
     for (let i = 0; i < times.length; i++) {
-      const date = times[i].split("T")[0]; 
+      const date = times[i].split("T")[0];
 
+      // Ensure the day exists no matter what
       if (dailyMaxUV[date] === undefined) {
-        dailyMaxUV[date] = uv[i];
-      } else {
-        dailyMaxUV[date] = Math.max(dailyMaxUV[date], uv[i]);
+        dailyMaxUV[date] = null;
+      }
+
+      // Only update if UV value exists
+      if (uv[i] != null) {
+        if (dailyMaxUV[date] == null) {
+          dailyMaxUV[date] = uv[i];
+        } else {
+          dailyMaxUV[date] = Math.max(dailyMaxUV[date], uv[i]);
+        }
       }
     }
 
@@ -42,12 +50,11 @@ function handleSelection(type) {
   const result = {};
 
   for (const date in dailyMaxUV) {
-    const currentDate = new Date(date);
-    currentDate.setHours(0, 0, 0, 0);
+    const [year, month, day] = date.split("-").map(Number);
+    const currentDate = new Date(year, month - 1, day); 
+    const diffDays = Math.floor((currentDate - today) / (1000 * 60 * 60 * 24));
 
-    const diffDays = Math.round((currentDate - today) / (1000 * 60 * 60 * 24));
-
-  if (type === "future" && diffDays >= 0 && diffDays < 5) {
+  if (type === "future" && diffDays > 0 && diffDays <= 5) {
     result[date] = dailyMaxUV[date];
   }
 
@@ -89,7 +96,7 @@ button.addEventListener("click", () => {
 
       //Fetch weather using lat/lon
       return fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=uv_index&past_days=5&forecast_days=5`
+      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=uv_index&past_days=5&forecast_days=6`
     );
     })
     .then(res => res.json())
@@ -104,10 +111,18 @@ button.addEventListener("click", () => {
       for (let i = 0; i < times.length; i++) {
         const date = times[i].split("T")[0];
 
+        // Ensure the day exists no matter what
         if (dailyMaxUV[date] === undefined) {
-          dailyMaxUV[date] = uv[i];
-        } else {
-          dailyMaxUV[date] = Math.max(dailyMaxUV[date], uv[i]);
+          dailyMaxUV[date] = null;
+        }
+
+        // Only update if UV value exists
+        if (uv[i] != null) {
+          if (dailyMaxUV[date] == null) {
+            dailyMaxUV[date] = uv[i];
+          } else {
+            dailyMaxUV[date] = Math.max(dailyMaxUV[date], uv[i]);
+          }
         }
       }
 
