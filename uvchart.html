@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UV Data Display/title>
+  <title>UV Data Display</title>
+  <link rel="stylesheet" href="assets/style/uvchart.css" />
 </head>
 
 <body>
 
-<select>
-    <option>Forecasted Next 5 Days</option>
-    <option>Previous 5 Days</option>
+<div class="general-content">
+
+<select id="uvSelector">
+    <option value="future">Forecasted Next 5 Days</option>
+    <option value="past">Previous 5 Days</option>
 </select>
 
-<input placeholder="Enter Zipcode">
+<input id="zipInput" placeholder="Enter Zipcode">
+<button id="searchBtn">Search</button>
 
+<div class="chart-container">
+<canvas id="myChart" width="600" height="400"></canvas>
+<div class="location-label" id="locationLabel"></div>
+</div>
 
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script src="assets/scripts/uvchart.js" defer></script>
 </body>

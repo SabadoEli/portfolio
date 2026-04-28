@@ -1,0 +1,81 @@
+body {
+  min-height: 100vh;
+  background: #FFFFE0;
+  background-attachment: fixed;
+  color: #e6f1ff;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
+}
+
+
+.chart-container{
+    padding: 10px;
+    background: #E6E6AA;
+    border-radius: 12px;
+    
+    display: flex;  
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;  
+}
+
+.location-label{
+    color: black;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.general-content {
+    text-align: center;
+}
+
+select,
+input,
+button {
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 14px;
+    margin: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+#uvSelector {
+    background: #EEE8AA;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#zipInput {
+    background: #FFFACD;
+    color: #333;
+    width: 180px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#searchBtn {
+    background: #EEE8AA;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#searchBtn:hover {
+    background: #DDD68A;
+    transform: translateY(-1px);
+}
+
+select:focus,
+input:focus {
+    box-shadow: 0 0 0 2px #CFC97A;
+}
+
+button:active {
+    transform: scale(0.97);
+}
